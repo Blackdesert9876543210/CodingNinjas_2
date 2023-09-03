@@ -9,5 +9,19 @@
 </head>
 <body>
     <h1>Rended from ejs </h1>
+    <div>
+        <ul>
+            <% for (let i of contact_list) {
+                %>
+                <li>
+                    <P><%= i.name %></P>
+                    <P><%= i.phone %></P>
+                    
+                </li>
+                <%
+            }
+            %>
+        </ul>
+    </div>
 </body>
 </html>
