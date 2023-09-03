@@ -9,6 +9,9 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', function (req, res) {
     return res.render('home', { title: "contact list"});
+});
+app.get('/practice', function(req, res) {
+    return res.render('practice',{ title: "practice ejs page"});
 })
 
 app.listen(PORT, function (err) {
