@@ -1,10 +1,14 @@
 
 const express = require('express');
+const path = require('path');
 const PORT = 3000;
 const app = express();
 
-app.get('/profile', function (req, res) {
-    res.send('serving text !! ')
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.get('/', function (req, res) {
+    return res.render('home');
 })
 
 app.listen(PORT, function (err) {
