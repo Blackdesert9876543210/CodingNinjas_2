@@ -7,6 +7,17 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded());
+app.use( function(req, res,next) {
+    req.myName = "ashim";
+    console.log("middleware one called");
+    next();
+  
+});
+app.use( function (req, res, next) {
+    console.log("middleware two called");
+    console.log("my name from middware 2 ",req.myName);
+    next();
+})
 var contactlist = [
     {
         name: "ashim",
@@ -23,6 +34,7 @@ var contactlist = [
 ]
 
 app.get('/', function (req, res) {
+    console.log(req.myName);
     return res.render('home', { 
         title: "contact list",
         contact_list: contactlist
