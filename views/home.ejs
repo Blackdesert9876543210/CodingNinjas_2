@@ -6,14 +6,19 @@
     <title>
         <%= title %>
     </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <h1>Rended from ejs </h1>
+    <h1 id="page-heading">
+        <i class="fa fa-address-book"></i>
+        My Contacts
+    </h1>
     <div>
         <ul>
             <% for (let i of contact_list) {
                 %>
-                <li>
+                <li id="section">
                     <P><%= i.name %></P>
                     <P><%= i.phone %></P>
                     
@@ -29,5 +34,7 @@
 
        <button type="submit">Add Contact</button>
     </form>
+    <script type="text/javascript" src="/js/home.js"></script>
 </body>
+
 </html>
