@@ -3,8 +3,36 @@ body{
     font-family: sans-serif;
     text-align: center;
 }
-#page-heading {
+ .contact {
+    padding: 3px 10px;
+    border: 1 px solid white;
+    background-color: #6f92f9;
+    box-shadow: 2px lightgray;
+    color: white;
+    display: flex;
+    margin: 2px;
+    width: 60%;
+    align-items: center;
+
+ }
+ .contact .details{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+ }
+ .contact .delete-button {
+    width:  10%;
+    padding: 3px;
     text-align: center;
-    margin-top: 25px;
-    color: grey;
-}
+    margin-top: 5px;
+ }
+ .contact .delete-button a{
+    color: white;
+    background-color: red;
+ }
+ .contact p {
+    margin: 5px 0;
+ }
+

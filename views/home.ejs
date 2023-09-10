@@ -14,14 +14,20 @@
         <i class="fa fa-address-book"></i>
         My Contacts
     </h1>
-    <div>
+    <div id="contact-list-container">
         <ul>
             <% for (let i of contact_list) {
                 %>
-                <li id="section">
-                    <P><%= i.name %></P>
-                    <P><%= i.phone %></P>
-                    
+                <li class="contact">
+                    <div class="details">
+                        <P><%= i.name %></P>
+                        <P><%= i.phone %></P>
+                    </div>
+                    <div class="delete-button">
+                        <a href="/delete-contact/?phone=<%= i.phone %>">
+                            <i class="fa fa-window-close"></i>
+                        </a>
+                    </div>
                 </li>
                 <%
             }

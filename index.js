@@ -53,6 +53,17 @@ app.post('/create-contact', function(req, res) {
         phone: req.body.phone
     });
     return res.redirect('/');
+});
+app.get('/delete-contact', function (req,res) {
+    let phone = req.query.phone;
+    let contactIndex = contactlist.findIndex(contact => contact.phone == phone);
+    if (contactIndex != -1) {
+        contactlist.splice(contactIndex,1);
+    }
+    return res.redirect('back');
+
+    
+
 })
 
 app.listen(PORT, function (err) {
